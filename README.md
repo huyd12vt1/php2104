@@ -62,4 +62,4 @@ new file ' tên file mới ' : tạo mới một file
 apt sudo install : download cái gì đấy 
 sudo apt update : cập nhật phiên bản mới nhất cho các ứng dụng 
 
---------
+-------------

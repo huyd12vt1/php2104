@@ -8,7 +8,7 @@
             border: 1px solid black;
         }
         th {
-            width: 70px;
+            width: 25%;
         }
     </style>
 </head>
@@ -48,7 +48,7 @@
                 + "</tr>";
 
             var pageNumber = 1;
-            var pageSize = 2;
+            var pageSize = 4;
 
             text += nextPage(students, pageNumber, pageSize);
 
@@ -78,16 +78,16 @@
                 for (beginRow; beginRow < endRow; beginRow++) {
                     text += "<tr>";
 
-                    if (beginRow >= students.length) {
-                        break;
-                    }
+                        if (beginRow >= students.length) {
+                            break;
+                        }
 
-                    childArr = students[beginRow];
-                    childArrLen = childArr.length;
+                        childArr = students[beginRow];
+                        childArrLen = childArr.length;
 
-                    for (var j = 0; j < childArrLen; j++) {
-                        text += "<td>" + childArr[j] + "</td>";
-                    }
+                        for (var j = 0; j < childArrLen; j++) {
+                            text += "<td>" + childArr[j] + "</td>";
+                        }
                     text += "</tr>";
                 }
 

@@ -8,62 +8,68 @@
 </head>
 
 <body>
-    <div class="title1">
-        <p class="text1">Email</p>
-        <p class="text1">Password</p>
+    <div id="display1">
+        <p>Email</p>
+        <p>Password</p>
     </div>
 
-    <div class="title1">
-        <div class="padding1">
-            <input class="input11" type="text" value="">
+    <div id="display2">
+        <div>
+            <input type="text" value="">
         </div>
-        <div class="padding1">    
-            <input class="input11" type="password" value="">
+        <div>    
+            <input type="password" value="">
         </div>
     </div>
 
-    <div class="title1">
-        <p class="padding2">Address</p>
-    </div>
-
-    <div class="padding2">
-        <input class="input11" placeholder="1234 Main St" type="text" value="">
-    </div>
-
-    <div class="text1">
+    <div id="display3">
+        <p>Address</p>
+        <div>
+            <input class="input-text" placeholder="1234 Main St" type="text" value="">
+        </div>
         <p>Address2</p>
-    </div>
-
-    <div class="padding2">
-        <input class="input11" placeholder="Apartment, studio or floor" type="text" value="">
-    </div>
-
-    <div class="title1">
-        <p class="text7">City</p>
-        <p class="text8">State</p>
-        <p class="text9">Zip</p>
-    </div>
-
-    <div class="title1">
-        <div class="padding1">
-            <input class="input11" type="text" value="">
+        <div>
+            <input class="input-text" placeholder="Apartment, studio, or floor " type="text" value="">
         </div>
-        <div class="padding3">    
-            <input class="input11" type="password" value="">
-        </div>
-        <div class="padding4">
-            <input class="input11" type="text" value="">
-        </div>
-    </div> 
-    <br>
+    </div>    
 
-    <div>
-        <input class="input-check" type="checkbox" id="checkid" value="">
-        <label for="checkid">Check me out</label>
+    <div id="display4">
+        <div class="city"> <p>City</p> </div>
+        <div>
+            <div class="state"> <p>State</p> </div>
+            <div class="zip"> <p>Zip</p> </div>
+        </div>
     </div>
-    <br>
 
-    <input class="submit" type="submit" value="Sign in">
+    <div id="display5">
+        <div class="input-text">
+            <input type="text" value="">
+        </div>
+        <div>
+            <div class="input-state">    
+                <input autocomplete="off" name="" placeholder="Choose..." type="text" value="" list="State">
+                <datalist id="State">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist>
+            </div>
+            <div class="input-zip">    
+                <input type="number" value="">
+            </div>
+        </div>
+    </div> <br>
+
+    <div id="checkin">
+        <input type="checkbox" value=""> Check me out
+    </div> <br>
+
+    <div id="submit">
+        <input class="submit" type="submit" value="submit">
+    </div>
+    
 
 </body>
 

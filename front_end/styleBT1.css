@@ -1,3 +1,9 @@
+body
+{
+    width: 100%;
+    font-weight: bold;
+}
+
 #header
 {
     text-align: center;
@@ -12,33 +18,32 @@
     display: flex; 
 }
 
-.link
+#content .link
 {
     width: 20%;
-    background-color: rgb(204, 204, 204);
-    padding: 150px;     
+    background-color: rgb(204, 204, 204);     
     padding-top: 30px;
     padding-left: 20px; 
     line-height: 5mm;
 }
 
-.text
+#content .text
 {
     width: 80%;
     background-color: #f1f1f1;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 150px;     
+    font-family: Arial; 
+    padding: 150px;
     padding-top: 0px;
-    padding-left: 20px;
+    padding-left: 20px; 
     word-wrap: break-word;
 }
 
-.texthead
+#content .text .texthead
 {    
-    font-size: 1cm;  
+    font-size: 15mm;  
 }
 
-.text1
+p
 {   
     font-size: 15px;
     line-height: 5mm;
@@ -51,10 +56,4 @@
     background-color: rgb(119, 119, 119);
     color: white;
     font: 30px Arial;
-}
-
-body
-{
-    width: 100%;
-    font-weight: bold;
 }
