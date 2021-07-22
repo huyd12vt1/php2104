@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
+  
 <head>
     <meta charset="UTF-8">
     <title>Result PT Bac 2</title>
     <style>
-        
         body {
             text-align: center;
             background-color: green;
@@ -43,7 +42,7 @@
             $x1 = (-$b + sqrt($delta)) / (2 * $a);
             $x2 = (-$b - sqrt($delta)) / (2 * $a);
             $result = "Phương trình có 2 nghiệm là: " . "x1 = " . $x1 . " và x2 = " . $x2;
-        } else if ($delta == 0) {
+        } elseif ($delta == 0) {
             $x1 = (-$b / (2 * $a));
             $result = "Phương trình có nghiệm kép: x1 = x2 = " . $x1;
         } else {
