@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>BT lesson 12</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: grey;
+    }
+
+    #form {
+      width: 30%;
+      background-color: green;
+      border: 1px solid black;
+      margin: auto;
+      padding: 10px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: red;
+    }
+
+    #info-text {
+      width: 90%;
+      background-color: yellow;
+      border: 1px solid black;
+      margin: auto;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-family: Arial;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .form-control {
+      font-family: Arial;
+      font-weight: bold;
+    }
+
+    label.form-label1::after {
+      content: "*";
+      color: red;
+      margin-left: 5px;
+    }
+
+    p.hide {
+      display: none;
+    }
+
+    #submit {
+      border: 1px solid black;
+    }
+
+    #info-text {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="form" oninput="checkEmpty()">
+    <h2>Form Register Information</h2>
+    <div class="mb-3">
+      <label for="Input-name" class="form-label1">Name</label>
+      <input type="name" class="form-control" id="Input-name" placeholder="Full name" maxlength="30"
+        oninput="checkName()">
+      <p id="text-name" class="hide" style="color: red;">Vui lòng nhập chữ, số, _, -, tối đa là 30 kí tự !</p>
+    </div>
+    <div class="mb-3">
+      <label for="Input-email" class="form-label1">Email</label>
+      <input type="email" class="form-control" id="Input-email" placeholder="Name@gmail.com" oninput="checkEmail()">
+      <p id="text-email" class="hide" style="color: red;"> Vui lòng nhập đúng định dạng email VD:Giang@gmail.com !</p>
+    </div>
+    <div class="mb-3">
+      <label for="Input-phone" class="form-label1">Phone</label>
+      <input type="phone" class="form-control" id="Input-phone" placeholder="+84.." maxlength="11"
+        oninput="checkPhone()">
+      <p id="text-phone" class="hide" style="color: red;">Vui lòng chỉ nhập số , số đầu tiên là số 0 ,độ dài từ 9 đến 11
+        kí tự</p>
+    </div>
+    <div class="mb-3">
+      <label for="Input-addres" class="form-label1">Address</label>
+      <input type="addres" class="form-control" id="Input-addres" placeholder="...">
+    </div>
+    <div class="mb-3">
+      <label for="Input-birthday" class="form-label1">Birthday</label>
+      <input type="date" class="form-control" id="Input-birthday" placeholder="dd/mm/yyyy">
+    </div>
+    <label for="Input-gioitinh" class="form-label1">Giới Tính</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Nam
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+      <label class="form-check-label" for="flexRadioDefault2">
+        Nữ
+      </label>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Textarea Infor</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-label1" for="flexCheckDefault">
+        Đồng Ý Điều Khoản !
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Nhận Thông Báo !
+      </label>
+    </div>
+    <div class="mb-3">
+      <button id="submit" type="button" class="btn btn-primary disabled" onclick="Register()">Register</button>
+    </div>
+  </div>
+  <div id="info-text">
+    <label for="info" class="info-tt">Thông Tin Nhân Viên</label> <br>
+    <!-- <p id="info1"></p> -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    function checkEmpty() {
+      var name = document.getElementById("Input-name").value;
+      var email = document.getElementById("Input-email").value;
+      var phone = document.getElementById("Input-phone").value;
+      var address = document.getElementById("Input-addres").value;
+      var birthday = document.getElementById("Input-birthday").value;
+      var check_name = document.getElementById("flexRadioDefault1").checked;
+      var check_nu = document.getElementById("flexRadioDefault2").checked;
+      var check_dieukhoan = document.getElementById("flexCheckDefault").checked;
+      if (name != '' && email != '' && phone != '' && address != '' && birthday != '' && ((check_name || check_nu) && check_dieukhoan == true)) {
+        document.getElementById("submit").classList.remove('disabled');
+      }
+      else {
+        document.getElementById("submit").classList.add('disabled');
+      }
+    }
+    function checkName() {
+      var name = document.getElementById("Input-name").value;
+      name_match = name.match(/[a-zA-Z0-9_-\s]+/g);
+      name_replace = name.replace(name_match, '');
+      // console.log(name_replace);
+      if (name_replace != '') {
+        document.getElementById("text-name").style.display = 'block';
+      }
+      else {
+        document.getElementById("text-name").style.display = 'none';
+      }
+    }
+    function checkEmail() {
+      var mail = document.getElementById("Input-email").value;
+      mail_match = mail.match(/^[a-zA-Z0-9_-]+.@[a-zA-Z]+.[a-zA-Z]+$/g)
+      mail_replace = mail.replace(mail_match, '');
+      // console.log(mail_replace);
+      if (mail_replace != '') {
+        document.getElementById("text-email").style.display = 'block';
+      }
+      else {
+        document.getElementById("text-email").style.display = 'none';
+      }
+    }
+    function checkPhone() {
+      var phone = document.getElementById("Input-phone").value;
+      phone_match = phone.match(/0[0-9]+/g)
+      phone_replace = phone.replace(phone_match, '');
+      // console.log(phone_replace);
+      if (phone_replace != '' || phone.length < 9 || phone.length > 11) {
+        document.getElementById("text-phone").style.display = 'block';
+      }
+      else {
+        document.getElementById("text-phone").style.display = 'none';
+      }
+    }
+    function Register() {
+      let name = document.getElementById("Input-name").value;
+      let email = document.getElementById("Input-email").value;
+      let phone = document.getElementById("Input-phone").value;
+      let address = document.getElementById("Input-addres").value;
+      let birthday = document.getElementById("Input-birthday").value;
+      let other = document.getElementById("exampleFormControlTextarea1").value;
+      let check_name = document.getElementById("flexRadioDefault1").checked;
+      if (check_name == true) {
+        var gioitinh = "Gioi Tinh: Nam";
+      }
+      else {
+        var gioitinh = "Gioi Tinh: Nu";
+      }
+      var info = name + ' - ' + email + ' - ' + phone + ' - ' + address + ' - ' + birthday + ' - Other: ' + other + ' - ' + gioitinh;
+
+      var pElement = document.createElement("p");
+      pElement.innerHTML = info;
+      pElement.style.color = "red";
+
+      var info_list = document.getElementById('info-text');
+      info_list.appendChild(pElement);
+
+      var btn_Del = document.createElement("button");
+      btn_Del.innerHTML = "Delete";
+      pElement.appendChild(btn_Del);
+
+      btn_Del.setAttribute("onclick", "removeElement(this)");
+
+      document.getElementById("Input-name").value = '';
+      document.getElementById("Input-email").value = '';
+      document.getElementById("Input-phone").value = '';
+      document.getElementById("Input-addres").value = '';
+      document.getElementById("Input-birthday").value = '';
+      document.getElementById("exampleFormControlTextarea1").value = '';
+    }
+    function removeElement(btn_Del) {
+      btn_Del.parentElement.remove();
+    }
+  </script>
+
+</body>
+
+</html>
