@@ -1,0 +1,157 @@
+body
+{
+    font-family: Arial;
+    background-color: #f5f5dd;
+    padding-left: 30px;
+    padding-top: 30px;
+    width: 100%;
+}
+
+
+#display1 p
+{
+    width: 50%;
+    text-align: left;
+    margin-right: 20px;  
+}
+#display1
+{
+    display: flex;
+}
+
+
+#display2 div
+{
+    width: 50%;
+    text-align: left;
+    margin-right: 20px;  
+}
+#display2
+{
+    display: flex;  
+}
+#display2 input
+{
+    width: 100%;
+    text-align: left;
+    height: 25px;
+    font-size: 15px;
+    border: 1px solid grey;    
+    border-radius: 5px;
+}
+
+
+#display3 p
+{
+    width: 100%;
+    text-align: left;
+    margin-right: 20px;  
+}
+#display3 div
+{
+    text-align: left;
+    margin-right: 30px;  
+}
+#display3 div input
+{
+    width: 100%;
+    text-align: left;
+    height: 25px;
+    font-size: 15px;
+    border: 1px solid grey;    
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+
+#display4
+{
+    display: flex;
+}
+#display4 div
+{
+    width: 50%;
+    display: flex;
+    text-align: left; 
+}
+#display4 .city
+{
+    margin-right: 20px;  
+}
+#display4 div .state
+{
+    width: 60%;
+    text-align: left;
+    margin-right: 20px;  
+}
+#display4 div .zip
+{
+    width: 40%;
+    text-align: left;
+    margin-right: 20px;  
+}
+
+
+#display5
+{
+    display: flex;
+}
+#display5 div
+{
+    width: 50%;
+    display: flex;
+    text-align: left;
+}
+#display5 .input-text
+{
+    margin-right: 20px;  
+}
+#display5 div .input-state
+{
+    width: 60%;
+    text-align: left;
+    margin-right: 20px;  
+}
+#display5 div .input-state input
+{
+    padding-left: 10px;
+}
+#display5 div .input-zip
+{
+    width: 40%;
+    text-align: left;
+    margin-right: 20px;  
+}
+#display5 input
+{
+    width: 100%;
+    text-align: left;
+    height: 25px;  
+    font-size: 15px;
+    border: 1px solid grey;    
+    border-radius: 5px;
+}
+
+
+#submit input
+{
+    background-color:#15ff00;  
+    border-radius: 5px;
+}
+#submit .submit
+{
+    color: white;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+

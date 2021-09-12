@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Array</title>
+    <style type="text/css">
+        table, tr, td, th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<!-- Array:
+    var cars = ['car1', 'car2', 'car3', 'car4'];
+    var students = [
+        [1, 'Giang', 'PHP2008', 8],
+        [2, 'Kien', 'PHP2104', 9],
+        [3, 'Nam', 'PHP2105', 7],
+        [4, 'Hoan', 'PHP2103', 10],
+    ]; -->
+
+
+<body>
+    <p id="demo"></p>
+
+
+    <input type="search" name="search" id="search" placeholder="search">
+    <button onclick="sort1()">Sort1</button>  
+
+    <script type="text/javascript">
+        var students = [
+            [1, 'Giang', 'PHP2008', 8],
+            [2, 'Kien', 'PHP2104', 9],
+            [5, 'Nam', 'PHP2105', 7],
+            [4, 'Hoan', 'PHP2103', 10],
+        ];
+
+        var studentLen = students.length;
+
+        var text = "<table width='100%'>"
+            + "<tr>"
+                + "<th>No</th>"
+                + "<th>Name</th>"
+                + "<th>Class</th>"
+                + "<th>Point</th>"
+            + "</tr>";
+
+        for (var i = 0; i < studentLen; i++) {
+            text += "<tr>";
+
+            childArr = students[i];
+            childArrLen = childArr.length;
+
+            for (var j = 0; j < childArrLen; j++) {
+                text += "<td>" + childArr[j] + "</td>";
+            }
+
+            text += "</tr>";
+        }
+
+        text += "</table>";
+
+        document.getElementById('demo').innerHTML = text;
+
+        function sort1() {
+            students.sort(function(a, b) {
+                console.log(a);
+                console.log(b);
+
+                return a[3] - b[3];
+            });
+
+            console.log(students.reverse());
+
+            var xemay = [
+                ['xe1', 100],
+                ['xe2', 200],
+                ['xe3', 800],
+                ['xe6', 400],
+                ['xe5', 500],
+            ];
+        
+            function search(){
+                var document.getElementById("text").value;
+                console.log('ok')
+            }    
+
+            // console.log(xemay.sort(function(a, b) { return b - a; }));
+            // console.log(xemay.sort().reverse());
+        }
+    </script>
+</body>
+</html>

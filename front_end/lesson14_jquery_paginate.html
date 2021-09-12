@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jquery-table</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+        table, tr, td, th {
+            border: 1px solid black;
+        }
+        th {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <button id="load">Load more</button>
+
+    <script type="text/javascript">
+        $(function () {
+            var students = [
+                [1, 'Giang', 'PHP2008', 6],
+                [2, 'Kien', 'PHP2104', 7],
+                [3, 'Nam', 'PHP2105', 8],
+                [4, 'Hieu', 'PHP2103', 8],
+                [5, 'Dat', 'PHP2103', 6],
+                [6, 'Hoang', 'PHP2103', 8],
+                [7, 'Hoan', 'PHP2103', 9],
+                [8, 'Khiem', 'PHP2103', 8],
+                [9, 'Quan', 'PHP2103', 7],
+                [10, 'Truong', 'PHP2103', 9],
+                [11, 'Huy', 'PHP2103', 9],
+                [12, 'Hung', 'PHP2103', 9],
+                [13, 'Tan', 'PHP2103', 8],
+                [14, 'Chien', 'PHP2103', 7],
+                [15, 'Khang', 'PHP2103', 8],
+            ];
+
+            var studentLen = students.length;
+
+            var text = "<table width='100%'>"
+                + "<tr>"
+                    + "<th>No</th>"
+                    + "<th>Name</th>"
+                    + "<th>Class</th>"
+                    + "<th>Point</th>"
+                + "</tr>";
+
+            var pageNumber = 1;
+            var pageSize = 4;
+
+            text += nextPage(students, pageNumber, pageSize);
+
+            text += "</table>";
+
+            $('#demo').html(text);
+
+            $('#load').click(function() {
+                pageNumber++;
+
+                var htmlRow = nextPage(students, pageNumber, pageSize);
+
+                $('tbody').append(htmlRow);
+
+                if (pageNumber * pageSize >= studentLen) {
+                    $('#load').hide();
+                }
+            });
+
+            function nextPage(students, pageNumber, pageSize) {
+                var beginRow = (pageNumber - 1) * pageSize;
+                var endRow = pageNumber * pageSize;
+
+                var text = '';
+                var childArr = [];
+
+                for (beginRow; beginRow < endRow; beginRow++) {
+                    text += "<tr>";
+
+                        if (beginRow >= students.length) {
+                            break;
+                        }
+
+                        childArr = students[beginRow];
+                        childArrLen = childArr.length;
+
+                        for (var j = 0; j < childArrLen; j++) {
+                            text += "<td>" + childArr[j] + "</td>";
+                        }
+                    text += "</tr>";
+                }
+
+                return text;
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-  
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Giai Ptrinh Bac 2</title>
@@ -45,6 +45,10 @@
         Nhap so c: <input id="c" type="text" name="c"> <br>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+
+
+
 </body>
 
 </html>

@@ -7,12 +7,22 @@
 </head>
 
 <body>
-    <h2> Display current Time. </h2>
+    <!-- <h2> Display current Time. </h2>
     <form action="welcome.php" method="POST">
         Name: <input type="text" name="name"><br />
         Email: <input type="text" name="email"><br />
         <input type="submit">
-    </form>
+    </form> -->
+
+    
+    <h1>Welcome to my home page!</h1>
+    <p>Some text.</p>
+    <p>Some more text.</p>
+    <?php include 'BT2.htm';
+    echo "Testtttttttt, $color, $car";
+    ?>
+
+
 </body>
 
 </html>

@@ -16,6 +16,7 @@ body
 #content
 {
     display: flex; 
+    white-space: pre-line;
 }
 
 #content .link

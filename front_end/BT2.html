@@ -1,75 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>BT2</title>
-    <link href="styleBT2.css" type="text/css" rel="stylesheet">
+    <link href="./styleBT2.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="display1">
-        <p>Email</p>
-        <p>Password</p>
-    </div>
-
-    <div id="display2">
-        <div>
-            <input type="text" value="">
+    <div id="email_pass">
+        <div class="left">
+            <p>Email</p>
+            <input class="input" type="text" size="30">
         </div>
-        <div>    
-            <input type="password" value="">
+        <div class="right">
+            <p>Pass</p>
+            <input class="input" type="text">
         </div>
     </div>
-
-    <div id="display3">
-        <p>Address</p>
-        <div>
-            <input class="input-text" placeholder="1234 Main St" type="text" value="">
-        </div>
-        <p>Address2</p>
-        <div>
-            <input class="input-text" placeholder="Apartment, studio, or floor " type="text" value="">
-        </div>
-    </div>    
-
-    <div id="display4">
-        <div class="city"> <p>City</p> </div>
-        <div>
-            <div class="state"> <p>State</p> </div>
-            <div class="zip"> <p>Zip</p> </div>
-        </div>
+    <div id="address">
+        <p>Address 1</p>
+        <input class="input" type="text" size="30" placeholder="1234 main St ...">
+        <p>Address 2</p>
+        <input class="input" type="text" size="30" placeholder="Appartment, Studio, or floor">
     </div>
-
-    <div id="display5">
-        <div class="input-text">
-            <input type="text" value="">
+    <div id="city_state_zip">
+        <div class="left">
+            <p>City</p>
+            <input class="input" type="text" size="30">
         </div>
-        <div>
-            <div class="input-state">    
-                <input autocomplete="off" name="" placeholder="Choose..." type="text" value="" list="State">
-                <datalist id="State">
-                    <option value="Internet Explorer">
-                    <option value="Firefox">
-                    <option value="Chrome">
-                    <option value="Opera">
-                    <option value="Safari">
+        <div class="right">
+            <div id="state">
+                <p>State</p>
+                <input class="input" type="text" list="car" placeholder="Choose...">
+                <datalist id="car">
+                    <option>BMV</option>
+                    <option>AUDI</option>
+                    <option>MEC</option>
+                    <option>VOVOL</option>
+                    <option>POSCHE</option>
                 </datalist>
             </div>
-            <div class="input-zip">    
-                <input type="number" value="">
+            <div id="zip">
+                <p>Zip</p>
+                <input class="input" type="text" size="30">
             </div>
         </div>
-    </div> <br>
-
-    <div id="checkin">
-        <input type="checkbox" value=""> Check me out
-    </div> <br>
-
-    <div id="submit">
-        <input class="submit" type="submit" value="submit">
     </div>
-    
+    <div id="check">
+        <input id="input_check" type="checkbox"> <b>Check me out</b> <br />
+        <button type="button">Sign in</button>
+    </div>
+
 
 </body>
 
